@@ -8,10 +8,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisities
 
-What things you need to install the software and how to install them
+prettytable==0.7.2
+pygeocoder==1.2.5
+requests==2.11.1
+scapy==2.3.2
+simplekml==1.3.0
+wget==3.2
+wigle==0.0.4
 
 ```
-Give examples
+git clone https://github.com/sanitycheck/rfcreeper
+cd rfcreeper
+pip install -r requirements.txt
 ```
 
 ### Installing
@@ -21,7 +29,7 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+python rfcreeper.py --updateOui
 ```
 
 And repeat

@@ -1,6 +1,6 @@
-# Project Title
+# RFCreeper
 
-One Paragraph of project description goes here
+RFCreeper is a geolocation tracking tool which leverages information from network probe requests (802.11 management frames) against the Wigle.net war driving database to try to produce an accurate representation on where a target has been. The results gathered from the Wigle database are then parsed into a KML file based on location and can be viewed in Google Earth. As of right now this application only supports single network lookups at a time and requires a Wigle.net account to use the API.
 
 ## Getting Started
 

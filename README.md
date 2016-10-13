@@ -6,15 +6,9 @@ RFCreeper is a geolocation tracking tool which leverages information from networ
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisities
+### Depencies 
 
-prettytable==0.7.2
-pygeocoder==1.2.5
-requests==2.11.1
-scapy==2.3.2
-simplekml==1.3.0
-wget==3.2
-wigle==0.0.4
+A list of dependencies can be found here --> [requirements.txt](requirements.txt)
 
 ```
 git clone https://github.com/sanitycheck/rfcreeper

@@ -31,7 +31,7 @@ python rfcreeper.py -i mon0
 and you should recieve output similar to what is shown below.
 <br >
 <br >
-**NOTE:**Depending on the capability of your wireless card the RSSI values might not necessarily be correct.
+**NOTE:** Depending on the capability of your wireless card the RSSI values might not necessarily be correct.
 ```
   DeviceVendor                          ClientMac           Probes                RSSI   TimeStamp                 
                                                                                                                    
@@ -68,7 +68,7 @@ If you everything went well you should get the following output
 [+] Filtering results
 [+] Done resolving AP information
 [+] Generating KML from AP information
-[+] DDWRT KML file generated successfully
+[+] <KmlName> KML file generated successfully
 ```
 ### Analysing the KML file
 

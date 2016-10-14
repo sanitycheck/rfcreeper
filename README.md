@@ -28,28 +28,51 @@ For the next command your NIC should be in monitor mode
 ```
 python rfcreeper.py -i mon0
 ```
+and you should recieve output similar to what is shown below.
+<br >
+<br >
+**NOTE:**Depending on the capability of your wireless card the RSSI values might not necessarily be correct.
+```
+  DeviceVendor                          ClientMac           Probes                RSSI   TimeStamp                 
+                                                                                                                   
+  Seiko Epson Corporation               11:22:33:44:55:66   Fleming Residence     -256   Thu Oct 13 20:37:18 2016  
+  Apple, Inc.                           77:88:99:AA:BB:CC   BACK 2 BACK           -256   Thu Oct 13 20:37:20 2016  
+  Seiko Epson Corporation               DD:EE:FF:A1:A2:A3   09EA49-MG2900series   -256   Thu Oct 13 20:37:22 2016  
+  Hewlett Packard                       A4:A5:A6:A7:A8:A9   Hershey1              -256   Thu Oct 13 20:37:23 2016  
+  Samsung Electronics Co.,Ltd           A1:B1:C1:D1:E1:F1   The Canasians         -256   Thu Oct 13 20:37:23 2016  
+  SAMSUNG ELECTRO-MECHANICS(THAILAND)   AC:DC:B2:B3:B4:BE   logans5               -256   Thu Oct 13 20:37:25 2016  
+```
 
-End with an example of getting some data out of the system or using it for a little demo
+So if we can narrow down which device our target is using we can then start leveraging network names against the Wigle database
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To perform ESSID lookups and generate KML files from the returned results we need the following:
+<br >
+* A wigle account
+* The name of the network your targeting
+* A name for the KML file
 
+After issuing the following command you should also be prompted to enter your account password.
+```
+python rfcreeper.py -T <NetworkName> -u <WigleUsername> -k <KmlName>
+WARNING: No route found for IPv6 destination :: (no default route?)
+Wigle.net Account Password: 
+```
+
+If you everything went well you should get the following output
+```
+[+] Logging into wigle client
+[+] Searching wigle database
+[+] Access Points found: 100
+[+] Filtering results
+[+] Done resolving AP information
+[+] Generating KML from AP information
+[+] DDWRT KML file generated successfully
+```
 ### Break down into end to end tests
 
-Explain what these tests test and why
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Author
 

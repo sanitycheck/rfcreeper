@@ -96,4 +96,4 @@ This project is licensed under the GNU General Public License - see the [LICENSE
 
 ## Acknowledgments
 
-* Hat tip to that sexy beast Thomas and Princess C
+* Hat tip to Software Development Profs for encouraging me to take my programming a step further

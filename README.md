@@ -77,6 +77,15 @@ The KML file  generated can now be analyzed using utilities such as google earth
 ![Alt text](https://github.com/sanitycheck/rfcreeper/blob/master/GoogleEarth.png)
 ![Alt text](https://github.com/sanitycheck/rfcreeper/blob/master/GoogleEarth2.png)
 
+## Future release features
+* Packet Capture File Reading and Writing
+* Vendor Based Scanning
+* Target Name Based Scanning
+* MAC Filtering
+* ESSID Filtering
+* KML Merging
+* CSV Logging
+
 ## Author
 
 Dustin Mallory

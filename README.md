@@ -23,10 +23,10 @@ This command download a text file from ieee.org that contains a list of Vendor t
 python rfcreeper.py --updateOui
 ```
 
-And repeat
+For the next command your NIC should be in monitor mode
 
 ```
-until finished
+python rfcreeper.py -i mon0
 ```
 
 End with an example of getting some data out of the system or using it for a little demo

@@ -74,6 +74,7 @@ If you everything went well you should get the following output
 
 The KML file  generated can now be analyzed using utilities such as google earth. The content within the kml is organised based on location and and associated sub locations. If reconnaissance has been done on the target prior to using rfcreeper it should be relatively easy deduce past locations where the target has been. That being said, This tool heavily relies on only a small fraction of access point information that has already been uploaded to the wigle.net.
 
+![Alt text](/rfcreeper/GoogleEarth?raw=true "Optional Title")
 
 ## Author
 

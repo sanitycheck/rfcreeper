@@ -4,8 +4,7 @@ RFCreeper is a WIP geolocation tracking tool which leverages information from ne
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+As of right now RFCreeper is only a sigle file python script. All that needs to be done to get this application up and running is to install a few dependencies and use its built in function to create a database table. The reason we need to create this table is so that RFCreeper can look up Vendors for each device's MAC address 
 ### Installing Depencies 
 
 A list of dependencies can be found here --> [requirements.txt](requirements.txt)
@@ -18,9 +17,7 @@ pip install -r requirements.txt
 
 ### Setup
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+This command download a text file from ieee.org that contains a list of Vendor types and their associated OUI. This will then be parsed into an sqlite database for RFCreeper to use.
 
 ```
 python rfcreeper.py --updateOui

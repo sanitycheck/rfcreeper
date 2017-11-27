@@ -14,7 +14,7 @@
 from scapy.all import *
 from prettytable import PrettyTable
 from prettytable import PLAIN_COLUMNS
-from wigle import Wigle
+from pygle import network
 import getpass
 from pygeocoder import Geocoder
 import wget
@@ -40,10 +40,6 @@ parser.add_option('--updateOui',
                   action='store_true',
                   dest='UpdateOui',
                   help='This option will update the tables in the vendor database')
-parser.add_option('-u',
-                  dest='username',
-                  type='string',
-                  help='Specify Wigle.net Username')
 parser.add_option('-k',
                   dest='KMLFilename',
                   type='string',
@@ -70,15 +66,12 @@ class RFcreeper:
 
     def __init__(self):
         
-
-        self.HomeDir = os.path.expanduser('~')
-        self.WriteDir = self.HomeDir + '/rfcreeper/'
+        self.CurrentDir = "."
+        self.WriteDir = self.CurrentDir + '/rfcreeper/'
         self.DatabaseName = 'RFcreeper.db'
         self.TableName = 'target'
         self.VendorTable = 'VendorTable'
         self.WigleResults = {}
-        self.WigleUsername = ''
-        self.WiglePass = ''
         self.ExpensiveFiltering = True
         self.OutputData = PrettyTable("DeviceVendor ClientMac Probes RSSI TimeStamp".split())
         #self.OutputData.set_style(PLAIN_COLUMNS)
@@ -96,7 +89,7 @@ class RFcreeper:
         self.TimeStamp = None
         self.OuiUrl = "http://standards-oui.ieee.org/oui.txt"
 
-        if self.dir_writeable(self.HomeDir) == True:
+        if self.dir_writeable(self.CurrentDir) == True:
             os.system("mkdir -p {0}".format(self.WriteDir))
             self.DBConnect = sqlite3.connect(self.WriteDir + self.DatabaseName)
             self.DBConnect.text_factory = str
@@ -138,9 +131,9 @@ class RFcreeper:
            sort it into a multi-dimensional associative array"""
 
         print "[+] Logging into wigle client"
-        wigle = Wigle(self.WigleUsername, self.WiglePass) # username and password NOTE careful how much information (and how fast) you query as wigle.net has a cap lim
         print "[+] Searching wigle database"
-        results = wigle.search(ssid=TargetNetwork)
+        results = network.search(ssid=TargetNetwork)
+        results = results['results']
         APNumber = len(results)
         KeyCount = 1
         print "[+] Access Points found: %s" % (APNumber)
@@ -366,9 +359,7 @@ def main():
     # make sure that args that explicitly affect program variables i.e. filtering come first
     if options.DisFilter == True:
         traffic.ExpensiveFiltering = False
-    if options.TargetNetwork and options.username:
-             traffic.WigleUsername = options.username
-             traffic.WiglePass = getpass.getpass("Wigle.net Account Password: ")
+    if options.TargetNetwork:
              traffic.ResolveAP(options.TargetNetwork)
              traffic.KmlWriter(options.KMLFilename)
     
